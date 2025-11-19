@@ -1,10 +1,10 @@
 // ====================================================================================
-// TEIL 1: FRAGENKATALOG (Aktuell 25 Fragen. Bitte auf 50 erweitern!)
+// TEIL 1: FRAGENKATALOG (Insgesamt 70 Fragen)
 // ====================================================================================
 
-const quizData = [
+const quizDataOriginal = [
     // --------------------------------------------------------------------------------
-    // R1-4: GRUNDLAGEN, AUSRÜSTUNG (4 Fragen)
+    // R1-4: GRUNDLAGEN, AUSRÜSTUNG (5 Fragen)
     // --------------------------------------------------------------------------------
     {
         "id": "I.1",
@@ -60,11 +60,25 @@ const quizData = [
             "Der Spieler, der zuerst gegen die Vereinbarung verstößt, zieht sich die Grundstrafe zu."
         ],
         "answer_index": 2,
-        "explanation": "Vereinbaren zwei oder mehr Spieler, eine ihnen bekannte Regel oder Strafe absichtlich außer Acht zu lassen, sind sie disqualifiziert (Regel 1.3b(1))."
+        "explanation": "Vereinbaren zwei oder mehr Spieler, eine ihnen bekannte Regel oder Strafe absichtlich außer Acht zu lassen und hat einer von ihnen die Runde begonnen, sind sie disqualifiziert (Regel 1.3b(1))."
     },
-    
+    {
+        "id": "I.5",
+        "section": "I. Grundlagen & Ausrüstung (Regeln 1-4)",
+        "question": "Wie viele Strafschläge zieht sich ein Spieler im Zählspiel für den ersten Verstoß gegen Regel 4.3 (Unzulässige Verwendung von Ausrüstung) zu?",
+        "image_query": "Ausrüstung GPS",
+        "options": [
+            "Keine Strafe, da die Ausrüstung nicht im Schlag benutzt wurde.",
+            "Ein Strafschlag.",
+            "Die Grundstrafe (zwei Strafschläge).",
+            "Disqualifikation."
+        ],
+        "answer_index": 2,
+        "explanation": "Die Strafe für den ersten Verstoß gegen Regel 4.3 ist die Grundstrafe (zwei Strafschläge). Der zweite Verstoß führt zur Disqualifikation (Regel 4.3)."
+    },
+
     // --------------------------------------------------------------------------------
-    // R5-6: RUNDE UND LOCH (4 Fragen)
+    // R5-6: RUNDE UND LOCH (5 Fragen)
     // --------------------------------------------------------------------------------
     {
         "id": "II.1",
@@ -92,7 +106,7 @@ const quizData = [
             "Auf jedem Übungsgrün, das nicht der Platz ist."
         ],
         "answer_index": 2,
-        "explanation": "Das Üben von Putten oder Chippen ist auf dem zuletzt gespielten Grün und dem nächsten Abschlag erlaubt, aber solche Übungsschläge dürfen nicht aus einem Bunker ausgeführt werden (Regel 5.5b Ausnahme)."
+        "explanation": "Das Üben von Putten oder Chippen auf dem zuletzt gespielten Grün und dem nächsten Abschlag ist erlaubt, aber solche Übungsschläge dürfen nicht aus einem Bunker ausgeführt werden (Regel 5.5b Ausnahme)."
     },
     {
         "id": "II.3",
@@ -101,12 +115,12 @@ const quizData = [
         "image_query": "Golf Abschlag",
         "options": [
             "Der Schlag zählt automatisch, und der Ball ist im Spiel.",
-            "Der Gegner zieht die Grundstrafe (Lochverlust) zu, da der Schlag von außerhalb des Abschlags ausgeführt wurde.",
+            "Der Gegner zieht die Grundstrafe (Lochverlust) zu.",
             "Der Gegner darf den Schlag für ungültig erklären; der Spieler muss dann erneut von innerhalb des Abschlags spielen.",
             "Der Spieler zieht die Grundstrafe (zwei Strafschläge) zu und muss den Fehler berichtigen."
         ],
         "answer_index": 2,
-        "explanation": "Im Lochspiel ist dies straflos, aber der Gegner darf den Schlag unverzüglich für ungültig erklären. Tut er dies, muss der Spieler von innerhalb des Abschlags erneut spielen (Regel 6.1b(1))."
+        "explanation": "Im Lochspiel ist der Schlag straflos, aber der Gegner darf ihn unverzüglich für ungültig erklären. Tut er dies, muss der Spieler von innerhalb des Abschlags erneut spielen (Regel 6.1b(1))."
     },
     {
         "id": "II.4",
@@ -122,9 +136,23 @@ const quizData = [
         "answer_index": 1,
         "explanation": "Ein Spieler darf das Spiel unterbrechen, wenn er begründet Blitzgefahr als gegeben ansieht, muss dies aber so bald wie möglich der Spielleitung mitteilen (Regel 5.7a)."
     },
+    {
+        "id": "II.5",
+        "section": "II. Spielen der Runde & Lochs (Regeln 5-6)",
+        "question": "Welche Strafe fällt für den ersten Verstoß gegen die Regel der 'Unangemessenen Verzögerung' (Regel 5.6a) an?",
+        "image_query": "Stoppuhr Golf",
+        "options": [
+            "Verwarnung.",
+            "Die Grundstrafe (zwei Strafschläge).",
+            "Ein Strafschlag.",
+            "Disqualifikation."
+        ],
+        "answer_index": 2,
+        "explanation": "Die Strafe für den ersten Verstoß gegen Regel 5.6a (Unangemessene Verzögerung) ist ein Strafschlag. Der zweite Verstoß zieht die Grundstrafe nach sich, der dritte die Disqualifikation."
+    },
 
     // --------------------------------------------------------------------------------
-    // R7-11: BALL SPIELEN, BEWEGUNG (5 Fragen)
+    // R7-11: BALL SPIELEN, BEWEGUNG (6 Fragen)
     // --------------------------------------------------------------------------------
     {
         "id": "III.1",
@@ -196,9 +224,23 @@ const quizData = [
         "answer_index": 1,
         "explanation": "Das Entfernen eines losen hinderlichen Naturstoffs, das die Bewegung des Balls außerhalb des Grüns verursacht, zieht einen Strafschlag nach sich, und der Ball muss zurückgelegt werden (Regel 15.1b, Regel 9.4b)."
     },
+    {
+        "id": "III.6",
+        "section": "III. Spielen des Balls (Regeln 7-11)",
+        "question": "Welche Handlung ist nach Regel 8.1a verboten, da sie die Bedingungen, die den Schlag beeinflussen, verbessert?",
+        "image_query": "Divot zurücklegen",
+        "options": [
+            "Das leichte Aufsetzen des Schlägers direkt vor dem Ball.",
+            "Das Festtreten der Füße, wenn der Stand eingenommen wird.",
+            "Das Zurücklegen eines Divots in ein Divotloch im Gelände.",
+            "Das Entfernen von Tau oder Reif innerhalb des Abschlags."
+        ],
+        "answer_index": 2,
+        "explanation": "Das Zurücklegen eines Divots in ein Divotloch im Gelände verbessert die Bodenoberfläche und ist eine verbotene Handlung, die zur Grundstrafe führt (Regel 8.1a(3))."
+    },
     
     // --------------------------------------------------------------------------------
-    // R12-13: BUNKER UND GRÜN (4 Fragen)
+    // R12-13: SONDERBEREICHE (5 Fragen)
     // --------------------------------------------------------------------------------
     {
         "id": "IV.1",
@@ -256,13 +298,27 @@ const quizData = [
         "answer_index": 2,
         "explanation": "Trifft der Ball in Bewegung den im Loch befindlichen Flaggenstock, ist dies straflos (außer in bestimmten Fällen des absichtlichen Beeinflussens), und der Ball muss gespielt werden, wie er liegt (Regel 13.2a(2))."
     },
-    
+    {
+        "id": "IV.5",
+        "section": "IV. Sonderregeln für Bunker & Grüns (Regeln 12-13)",
+        "question": "Ihr Ball liegt auf dem Grün. Sie bessern eine alte Lochpfropfenkante aus, obwohl der Gegner noch spielt. Ist dies erlaubt?",
+        "image_query": "Lochpfropfen ausbessern",
+        "options": [
+            "Nein, da es den Raum des beabsichtigten Schwungs des Gegners beeinträchtigen könnte.",
+            "Ja, dies ist jederzeit erlaubt, solange es das Spiel nicht unangemessen verzögert.",
+            "Ja, aber nur, wenn Sie Ihren eigenen Ball noch nicht markiert haben.",
+            "Nein, nur Divots dürfen ausgebessert werden."
+        ],
+        "answer_index": 1,
+        "explanation": "Schäden auf dem Grün, wozu auch alte Lochpfropfen gehören, dürfen jederzeit ausgebessert werden, solange das Spiel dadurch nicht unangemessen verzögert wird (Regel 13.1c(2))."
+    },
+
     // --------------------------------------------------------------------------------
-    // R14: BALL AUFNEHMEN, DROPPEN, LEGEN (3 Fragen)
+    // R14-16: STRAFLOSE ERLEICHTERUNG (6 Fragen)
     // --------------------------------------------------------------------------------
     {
         "id": "V.1",
-        "section": "V. Ball aufnehmen & ins Spiel zurückbringen (Regel 14)",
+        "section": "VI. Straflose Erleichterung (Regeln 14-16)",
         "question": "Aus welcher Höhe muss ein Ball bei einem Erleichterungsverfahren korrekt gedroppt werden?",
         "image_query": "Droppen aus Kniehöhe",
         "options": [
@@ -276,7 +332,7 @@ const quizData = [
     },
     {
         "id": "V.2",
-        "section": "V. Ball aufnehmen & ins Spiel zurückbringen (Regel 14)",
+        "section": "VI. Straflose Erleichterung (Regeln 14-16)",
         "question": "Ein Spieler versucht, einen Ball an seine ursprüngliche Stelle zurückzulegen (außerhalb des Grüns und nicht im Sand). Der Ball bleibt zweimal nicht liegen. Was muss der Spieler beim dritten Versuch tun?",
         "image_query": "Golfball zurücklegen",
         "options": [
@@ -290,7 +346,7 @@ const quizData = [
     },
     {
         "id": "V.3",
-        "section": "V. Ball aufnehmen & ins Spiel zurückbringen (Regel 14)",
+        "section": "VI. Straflose Erleichterung (Regeln 14-16)",
         "question": "Ein auf korrekte Weise gedroppter Ball wird absichtlich von einem äußeren Einfluss abgelenkt, bevor er zur Ruhe kommt. Was muss der Spieler tun?",
         "image_query": "Golfball absichtlich abgelenkt",
         "options": [
@@ -300,15 +356,11 @@ const quizData = [
             "Er beendet das Erleichterungsverfahren, indem er den Ball hinlegt."
         ],
         "answer_index": 1,
-        "explanation": "Wird ein Ball absichtlich abgelenkt oder aufgehalten, bevor er zur Ruhe kommt, muss der Spieler erneut droppen, ohne dass dies als einer der beiden Drops zählt (Regel 14.3d)."
+        "explanation": "Wird ein auf die richtige Weise gedroppter Ball durch eine Person absichtlich abgelenkt oder aufgehalten (gleich ob innerhalb oder außerhalb des Erleichterungsbereichs), muss der Spieler erneut einen Ball nach Regel 14.3b droppen (Regel 14.3d)."
     },
-    
-    // --------------------------------------------------------------------------------
-    // R15-16: STRAFLOSE ERLEICHTERUNG (3 Fragen)
-    // --------------------------------------------------------------------------------
     {
         "id": "VI.1",
-        "section": "VI. Straflose Erleichterung (Regeln 15-16)",
+        "section": "VI. Straflose Erleichterung (Regeln 14-16)",
         "question": "Wo auf dem Platz ist straflose Erleichterung von ungewöhnlichen Platzverhältnissen (UPV) nicht zulässig?",
         "image_query": "Ungewöhnliche Platzverhältnisse",
         "options": [
@@ -322,21 +374,21 @@ const quizData = [
     },
     {
         "id": "VI.2",
-        "section": "VI. Straflose Erleichterung (Regeln 15-16)",
+        "section": "VI. Straflose Erleichterung (Regeln 14-16)",
         "question": "Was passiert, wenn der Ball eines Spielers in oder auf einem beweglichen Hemmnis liegt, aber nicht gefunden wird?",
         "image_query": "Ball in beweglichem Hemmnis verloren",
         "options": [
-            "Der Spieler muss Erleichterung mit Schlag und Distanzverlust in Anspruch nehmen.",
-            "Der Ball gilt als verloren, und der Spieler muss von der Stelle des vorigen Schlages spielen.",
+            "Der Ball gilt als verloren, und der Spieler muss Erleichterung mit Schlag und Distanzverlust in Anspruch nehmen.",
             "Der Spieler darf straflose Erleichterung in Anspruch nehmen, indem er am geschätzten Punkt des Kreuzens der Hemmnisgrenze droppt.",
+            "Der Ball gilt als verloren, und der Spieler zieht zwei Strafschläge zu.",
             "Der Spieler zieht einen Strafschlag zu und droppt den Ball an der Stelle, an der das Hemmnis lag."
         ],
-        "answer_index": 2,
-        "explanation": "Wenn bekannt oder so gut wie sicher ist, dass der Ball in oder auf einem beweglichen Hemmnis liegt, darf der Spieler straflose Erleichterung in Anspruch nehmen, indem er den geschätzten Punkt des Kreuzens der Hemmnisgrenze als Bezugspunkt verwendet (Regel 15.2b)."
+        "answer_index": 1,
+        "explanation": "Wenn bekannt oder so gut wie sicher ist, dass der Ball in oder auf einem beweglichen Hemmnis liegt, darf der Spieler straflose Erleichterung in Anspruch nehmen, wobei der geschätzte Punkt des Kreuzens der Hemmnisgrenze als Bezugspunkt verwendet wird (Regel 15.2b)."
     },
     {
         "id": "VI.3",
-        "section": "VI. Straflose Erleichterung (Regeln 15-16)",
+        "section": "VI. Straflose Erleichterung (Regeln 14-16)",
         "question": "Wann gilt ein Ball als eingebettet im Sinne der Regel 16.3?",
         "image_query": "Eingebetteter Ball Gelände",
         "options": [
@@ -348,9 +400,9 @@ const quizData = [
         "answer_index": 1,
         "explanation": "Der Ball eines Spielers gilt nur dann als eingebettet, wenn er in Folge des vorigen Schlags des Spielers in seinem eigenen Einschlagloch liegt und sich teilweise unter der Bodenoberfläche befindet (Regel 16.3a(2))."
     },
-    
+
     // --------------------------------------------------------------------------------
-    // R17-19: ERLEICHTERUNG MIT STRAFE (3 Fragen)
+    // R17-19: ERLEICHTERUNG MIT STRAFE (5 Fragen)
     // --------------------------------------------------------------------------------
     {
         "id": "VII.1",
@@ -364,7 +416,7 @@ const quizData = [
             "Grundstrafe (Lochverlust im Lochspiel)."
         ],
         "answer_index": 2,
-        "explanation": "Die zusätzliche Erleichterungsmöglichkeit, außerhalb des Bunkers zu droppen, kostet zwei Strafschläge (Regel 19.3b)."
+        "explanation": "Die zusätzliche Erleichterungsmöglichkeit, außerhalb des Bunkers zu droppen (Erleichterung auf der Linie zurück nach Regel 19.2b), kostet insgesamt zwei Strafschläge (Regel 19.3b)."
     },
     {
         "id": "VII.2",
@@ -394,9 +446,37 @@ const quizData = [
         "answer_index": 1,
         "explanation": "Der provisorische Ball muss aufgegeben werden, und der Spieler muss dann mit einem Strafschlag Erleichterung für den unspielbaren Originalball nehmen (Regel 18.3c(3))."
     },
+    {
+        "id": "VII.4",
+        "section": "VII. Erleichterung mit Strafe (Regeln 17-19)",
+        "question": "Ihr Ball liegt in einer Roten Penalty Area. Welche Erleichterungsoption mit einem Strafschlag steht Ihnen **nicht** zur Verfügung?",
+        "image_query": "Rote Penalty Area",
+        "options": [
+            "Erleichterung mit Schlag und Distanzverlust.",
+            "Seitliche Erleichterung.",
+            "Erleichterung auf der Linie zurück.",
+            "Erleichterung am geschätzten Punkt des Eintritts (Wahlrecht)."
+        ],
+        "answer_index": 3,
+        "explanation": "Die rote Penalty Area gibt drei Möglichkeiten mit einem Strafschlag: Schlag und Distanzverlust (17.1d(1)), Auf der Linie zurück (17.1d(2)) und Seitliche Erleichterung (17.1d(3)). Der geschätzte Punkt des Eintritts ist der Bezugspunkt für die seitliche Erleichterung, nicht eine eigenständige Option (Regel 17.1d)."
+    },
+    {
+        "id": "VII.5",
+        "section": "VII. Erleichterung mit Strafe (Regeln 17-19)",
+        "question": "Der Spieler droppt einen provisorischen Ball. Der provisorische Ball wird von einer Stelle gespielt, die näher zum Loch liegt als die Stelle, an der der ursprüngliche Ball vermutet wurde. Was ist die Folge?",
+        "image_query": "Provisorischer Ball näher zum Loch",
+        "options": [
+            "Der Spieler erhält die Grundstrafe (zwei Strafschläge).",
+            "Der provisorische Ball ist aufgegeben.",
+            "Der provisorische Ball wird mit Strafe von Schlag und Distanzverlust zum Ball im Spiel.",
+            "Der Spieler erhält einen Strafschlag und muss den ursprünglichen Ball spielen."
+        ],
+        "answer_index": 2,
+        "explanation": "Der provisorische Ball wird unter Strafe von Schlag und Distanzverlust zum Ball im Spiel des Spielers, wenn er von einer Stelle gespielt wird, die näher zum Loch liegt als die, an der der ursprüngliche Ball vermutet wird (Regel 18.3c(2))."
+    },
 
     // --------------------------------------------------------------------------------
-    // R20-25: VORGEHENSWEISE & SONDERFORMEN (6 Fragen)
+    // R20-25: VORGEHENSWEISE & SONDERFORMEN (5 Fragen)
     // --------------------------------------------------------------------------------
     {
         "id": "VIII.1",
@@ -442,7 +522,7 @@ const quizData = [
     },
     {
         "id": "X.1",
-        "section": "X. Spieler mit Behinderungen (Regel 25)",
+        "section": "X. Spieler mit Behinderungen (Regeln 25)",
         "question": "Ein blinder Spieler legt einen Schläger auf den Boden, um sich bei der Ausrichtung zu helfen. Was gilt laut Regel 25.2c?",
         "image_query": "Blinder Golfer Ausrichtungshilfe",
         "options": [
@@ -456,7 +536,7 @@ const quizData = [
     },
     {
         "id": "X.2",
-        "section": "X. Spieler mit Behinderungen (Regel 25)",
+        "section": "X. Spieler mit Behinderungen (Regeln 25)",
         "question": "Ein Spieler benutzt eine Mobilitätshilfe auf Rädern und nimmt seitliche Erleichterung für einen unspielbaren Ball in Anspruch. Wie groß ist der Erleichterungsbereich?",
         "image_query": "Rollstuhl Golf",
         "options": [
@@ -468,47 +548,945 @@ const quizData = [
         "answer_index": 3,
         "explanation": "Für Spieler mit einer Mobilitätshilfe auf Rädern wird die Größe des Erleichterungsbereichs bei seitlicher Erleichterung (Regel 19.2c) von zwei Schlägerlängen auf vier Schlägerlängen erweitert (Regel 25.4m)."
     },
+
+    // --------------------------------------------------------------------------------
+    // ERWEITERUNG AUF 70 FRAGEN (45 Neue Fragen)
+    // --------------------------------------------------------------------------------
     {
-        "id": "Def.1",
-        "section": "Definitionen & Begriffe (Regel 2)",
-        "question": "Was gehört **nicht** zu den fünf definierten Bereichen des Platzes?",
-        "image_query": "Golfplatz Bereiche",
+        "id": "I.6",
+        "section": "I. Grundlagen & Ausrüstung (Regeln 1-4)",
+        "question": "Ist die Auslegung einer Regel durch den Deutschen Golf Verband (DGV) in der deutschen Übersetzung strittig, auf welche Fassung ist zur Auslegung zurückzugreifen?",
+        "image_query": "Golfregelbuch Auslegung",
         "options": [
-            "Das Gelände",
-            "Alle Bunker",
-            "Das Aus",
-            "Alle Penalty Areas"
+            "Auf die Auslegung des DGV-Ausschusses Regeln und Amateurstatut.",
+            "Auf die Fassung in englischer Sprache.",
+            "Auf die gültige Entscheidung der USGA.",
+            "Auf das Offizielle Handbuch zu den Golfregeln."
+        ],
+        "answer_index": 1,
+        "explanation": "Aufgrund des Copyright-Vertrages mit R&A Rules Limited ist bei Differenzen über die Auslegung der vom DGV erstellten Übersetzung in die deutsche Sprache auf die Fassung in englischer Sprache zurückzugreifen."
+    },
+    {
+        "id": "II.6",
+        "section": "II. Spielen der Runde & Lochs (Regeln 5-6)",
+        "question": "Ein Spieler beginnt das Loch mit einem provisorischen Ball. Wann muss die Spielfolge der Gruppe beim nächsten Schlag eingehalten werden?",
+        "image_query": "Provisorischer Ball Spielfolge",
+        "options": [
+            "Nur wenn der provisorische Ball näher zum Loch liegt als der ursprüngliche Ball.",
+            "Nur wenn alle Spieler der Gruppe ihren ersten Schlag am Loch beendet haben.",
+            "Nachdem alle Spieler ihren ersten Schlag am Loch beendet haben, und bevor ein provisorischer oder anderer Ball gespielt wird.",
+            "Die Spielfolge wird nie durch das Spielen eines provisorischen Balls beeinflusst."
         ],
         "answer_index": 2,
-        "explanation": "Die fünf Bereiche sind: das Gelände, der Abschlag, alle Penalty Areas, alle Bunker und das Grün des Lochs. Das Aus ist außerhalb der Platzgrenzen (Regel 2.2)."
+        "explanation": "Die Spielfolge richtet sich nach Regel 6.4c: Alle Spieler der Gruppe machen zuerst ihren ersten Schlag, bevor ein Spieler den provisorischen oder einen anderen Ball vom Abschlag spielt."
+    },
+    {
+        "id": "III.7",
+        "section": "III. Spielen des Balls (Regeln 7-11)",
+        "question": "Ihr Ball liegt im Gelände. Sie treten versehentlich auf einen Ast, der daraufhin den Ball bewegt. Welche Strafe droht Ihnen?",
+        "image_query": "Ast bewegt Ball",
+        "options": [
+            "Ein Strafschlag, da Sie die Bewegung verursacht haben.",
+            "Keine Strafe, aber Sie müssen den Ball zurücklegen.",
+            "Grundstrafe, da Sie die Bodenoberfläche verändert haben.",
+            "Keine Strafe, der Ball wird von der neuen Stelle gespielt."
+        ],
+        "answer_index": 1,
+        "explanation": "Die Bewegung ist straflos, wenn sie versehentlich beim Versuch, den Ball zu finden oder zu identifizieren, geschieht (Regel 7.4). Der Ball muss zurückgelegt werden."
+    },
+    {
+        "id": "III.8",
+        "section": "III. Spielen des Balls (Regeln 7-11)",
+        "question": "Ein Ballmarker auf dem Grün wird versehentlich durch den Gegner bewegt. Was ist die Konsequenz?",
+        "image_query": "Ballmarker bewegt",
+        "options": [
+            "Der Gegner zieht einen Strafschlag zu, der Ballmarker muss zurückgelegt werden.",
+            "Dies ist straflos, der Ballmarker muss zurückgelegt werden.",
+            "Der Gegner zieht die Grundstrafe (Lochverlust) zu.",
+            "Der Ball muss von der geschätzten neuen Stelle gespielt werden."
+        ],
+        "answer_index": 1,
+        "explanation": "Es ist straflos, wenn der Ballmarker auf dem Grün versehentlich bewegt wird (Regel 13.1d(1)). Er muss an die ursprüngliche Stelle zurückgelegt werden."
+    },
+    {
+        "id": "III.9",
+        "section": "III. Spielen des Balls (Regeln 7-11)",
+        "question": "Ihr Ball kommt nach dem Schlag auf dem Golfplatz zur Ruhe und wird anschließend durch eine Person absichtlich abgelenkt, bevor Sie ihn spielen. Was müssen Sie tun?",
+        "image_query": "Ball abgelenkt",
+        "options": [
+            "Sie spielen den Ball, wie er liegt, und die Person erhält die Grundstrafe.",
+            "Sie müssen einen Ball an der geschätzten Stelle spielen, an der er ohne Ablenkung zur Ruhe gekommen wäre.",
+            "Sie müssen den Schlag mit einem Strafschlag wiederholen.",
+            "Sie sind verpflichtet, Schlag und Distanzverlust in Anspruch zu nehmen."
+        ],
+        "answer_index": 1,
+        "explanation": "Wird ein Ball in Bewegung absichtlich abgelenkt, darf der Ball nicht gespielt werden, wie er liegt. Der Spieler muss Erleichterung in Anspruch nehmen, basierend auf der geschätzten Stelle, an der der Ball ohne Ablenkung zur Ruhe gekommen wäre (Regel 11.2c(1))."
+    },
+    {
+        "id": "III.10",
+        "section": "III. Spielen des Balls (Regeln 7-11)",
+        "question": "Nachdem Sie Ihren Ball aus dem Bunker gespielt haben, harken Sie den Sand in der Nähe Ihrer Spiellinie ein. Der Ball liegt außerhalb des Bunkers. Ist dies erlaubt?",
+        "image_query": "Bunker harken",
+        "options": [
+            "Nein, da dies die Bedingungen der Spiellinie verbessert (Grundstrafe).",
+            "Ja, dies ist straflos zum Zweck der Platzpflege.",
+            "Ja, aber nur, wenn die Harke ein unbewegliches Hemmnis ist.",
+            "Nein, da die Regeln generell das Berühren des Sandes verbieten."
+        ],
+        "answer_index": 1,
+        "explanation": "Da der Ball außerhalb des Bunkers liegt, dürfen Sie den Sand im Bunker straflos zum Zweck der Platzpflege einebnen, auch wenn der Sand auf der Spiellinie des nächsten Schlages liegt (Regel 12.2b(3))."
+    },
+    {
+        "id": "III.11",
+        "section": "III. Spielen des Balls (Regeln 7-11)",
+        "question": "Sie spielen Ihren Ball. Er trifft versehentlich einen Baum und prallt zurück, wo er Sie oder Ihre Ausrüstung trifft. Was müssen Sie tun?",
+        "image_query": "Ball prallt zurück trifft Spieler",
+        "options": [
+            "Sie spielen den Ball, wie er liegt, straflos.",
+            "Sie erhalten einen Strafschlag und müssen den Schlag wiederholen.",
+            "Sie erhalten die Grundstrafe und spielen den Ball, wie er liegt.",
+            "Sie müssen den Schlag wiederholen, straflos."
+        ],
+        "answer_index": 0,
+        "explanation": "Trifft der Ball in Bewegung den Spieler oder die Ausrüstung versehentlich, ist dies straflos, und der Ball wird gespielt, wie er liegt (Regel 11.1a)."
+    },
+    {
+        "id": "III.12",
+        "section": "III. Spielen des Balls (Regeln 7-11)",
+        "question": "Ihr Caddie bemerkt, dass Sie sich falsch ausrichten und tritt wortlos aus dem beschränkten Bereich hinter Ihnen heraus. Was ist die Folge?",
+        "image_query": "Caddie Hilfe bei Ausrichtung",
+        "options": [
+            "Straflos, da er keine mündliche Beratung gegeben hat.",
+            "Grundstrafe für den Spieler, da der Caddie geholfen hat, beim Zielen.",
+            "Ein Strafschlag für den Spieler.",
+            "Der Schlag zählt nicht, muss aber wiederholt werden."
+        ],
+        "answer_index": 1,
+        "explanation": "Wenn der Caddie wortlos zur Seite tritt, gibt er dem Spieler ein Signal, dass dieser korrekt ausgerichtet ist, was gegen das Verbot verstößt, dem Spieler beim Zielen zu helfen. Der Spieler zieht sich die Grundstrafe zu (Regel 10.2b(4))."
+    },
+    {
+        "id": "IV.6",
+        "section": "IV. Sonderregeln für Bunker & Grüns (Regeln 12-13)",
+        "question": "Ihr Ball liegt auf dem Grün. Ein über den Lochrand ragender Ball wird vom Gegner absichtlich aufgenommen, bevor die 10-Sekunden-Wartezeit abgelaufen ist. Was ist die Konsequenz im Lochspiel?",
+        "image_query": "Ball am Lochrand aufgenommen",
+        "options": [
+            "Der Spieler muss den Ball an den Lochrand zurücklegen und der Gegner zieht einen Strafschlag zu.",
+            "Der Ball des Spielers gilt als mit dem vorherigen Schlag eingelocht.",
+            "Der Gegner verliert das Loch (Grundstrafe).",
+            "Der Ball muss an den Lochrand zurückgelegt werden, und die Wartezeit beginnt von neuem."
+        ],
+        "answer_index": 1,
+        "explanation": "Hebt der Gegner im Lochspiel absichtlich den über den Lochrand hinausragenden Ball des Spielers auf, bevor die Wartezeit endet, wird der Ball als mit dem vorherigen Schlag eingelocht behandelt (Regel 13.3b)."
+    },
+    {
+        "id": "IV.7",
+        "section": "IV. Sonderregeln für Bunker & Grüns (Regeln 12-13)",
+        "question": "Der Ball eines Spielers ruht innerhalb der Grenzen eines Bunkers, berührt aber nur ein Stück Gras (und keinen Sand). Liegt der Ball im Bunker?",
+        "image_query": "Ball auf Gras in Bunker",
+        "options": [
+            "Ja, da der Ball innerhalb der Grenzen des Bunkers liegt.",
+            "Nein, da er keinen Sand berührt und auf Gras liegt.",
+            "Ja, solange das Gras den Sand berührt.",
+            "Nein, der Ball gilt als im Gelände liegend."
+        ],
+        "answer_index": 1,
+        "explanation": "Liegt ein Ball auf Boden oder Gras oder anderen wachsenden oder befestigten natürlichen Gegenständen innerhalb der Grenzen des Bunkers und berührt er keinen Sand, liegt der Ball nicht im Bunker (Regel 12.1)."
+    },
+    {
+        "id": "IV.8",
+        "section": "IV. Sonderregeln für Bunker & Grüns (Regeln 12-13)",
+        "question": "Welche Strafe fällt an, wenn ein Spieler einen Ball auf einem 'falschen Grün' spielt?",
+        "image_query": "Falsches Grün",
+        "options": [
+            "Ein Strafschlag.",
+            "Grundstrafe (Lochverlust/Zwei Strafschläge).",
+            "Disqualifikation.",
+            "Der Schlag muss wiederholt werden, straflos."
+        ],
+        "answer_index": 1,
+        "explanation": "Ein Spieler darf den Ball nicht spielen, wie er liegt, wenn er durch ein falsches Grün beeinträchtigt ist. Die Strafe für das Spielen vom falschen Ort (Regel 13.1f) ist die Grundstrafe."
+    },
+    {
+        "id": "V.4",
+        "section": "VI. Straflose Erleichterung (Regeln 14-16)",
+        "question": "Ein gedroppter Ball trifft den Spieler und kommt im Erleichterungsbereich zur Ruhe. Was muss der Spieler tun?",
+        "image_query": "Ball trifft Spieler beim Droppen",
+        "options": [
+            "Er muss den Drop mit einem Strafschlag wiederholen.",
+            "Er spielt den Ball, wie er liegt, straflos.",
+            "Er muss den Ball an die ursprüngliche Stelle legen.",
+            "Er muss erneut droppen, ohne Strafe."
+        ],
+        "answer_index": 1,
+        "explanation": "Es ist straflos, wenn ein auf die richtige Weise gedroppter Ball versehentlich eine Person (einschließlich des Spielers) trifft. Kommt der Ball im Erleichterungsbereich zur Ruhe, ist das Verfahren abgeschlossen und er wird gespielt, wie er liegt (Regel 14.3c(1))."
+    },
+    {
+        "id": "VI.4",
+        "section": "VI. Straflose Erleichterung (Regeln 14-16)",
+        "question": "Ihr Ball liegt im Gelände. Sie finden in der Nähe einen alten, fest im Boden verankerten Holzpfahl. Darf dieser Pfahl (unbewegliches Hemmnis) entfernt werden?",
+        "image_query": "Unbewegliches Hemmnis Holzpfahl",
+        "options": [
+            "Ja, straflos, wenn er entfernt werden kann, ohne den Platz zu beschädigen.",
+            "Ja, aber nur, wenn der Pfahl Ihre Spiellinie beeinträchtigt.",
+            "Nein, er ist unbeweglich. Sie müssen straflose Erleichterung nehmen.",
+            "Ja, ein Strafschlag für das Entfernen eines fest verankerten Gegenstandes."
+        ],
+        "answer_index": 2,
+        "explanation": "Ein fest im Boden verankerter Gegenstand ist ein unbewegliches Hemmnis (Regel 16.1), das nicht entfernt werden darf. Der Spieler muss straflose Erleichterung in Anspruch nehmen."
+    },
+    {
+        "id": "VI.5",
+        "section": "VI. Straflose Erleichterung (Regeln 14-16)",
+        "question": "Ihr Ball liegt in einer großen Pfütze (zeitweiliges Wasser) im Fairway. Welche Bedingung muss der 'nächstgelegene Punkt vollständiger Erleichterung' (NPE) nicht zwingend erfüllen?",
+        "image_query": "Zeitweiliges Wasser",
+        "options": [
+            "Er muss sich im Gelände befinden.",
+            "Er darf nicht näher zum Loch liegen als die ursprüngliche Lage.",
+            "Er muss sich innerhalb einer Schlägerlänge vom Bezugspunkt befinden.",
+            "Er muss außerhalb der Penalty Area liegen."
+        ],
+        "answer_index": 2,
+        "explanation": "Der NPE ist der Bezugspunkt selbst. Der Erleichterungsbereich muss sich **eine Schlägerlänge** vom NPE erstrecken, aber der NPE muss im Gelände liegen und darf nicht näher zum Loch sein (Regel 16.1b)."
+    },
+    {
+        "id": "VI.6",
+        "section": "VI. Straflose Erleichterung (Regeln 14-16)",
+        "question": "Ihr Ball liegt auf einer Ameisenstraße im Gelände. Sie nehmen Erleichterung in Anspruch. Der gedroppte Ball kommt außerhalb des Erleichterungsbereichs zur Ruhe. Was ist der nächste Schritt?",
+        "image_query": "Ameisenhügel Erleichterung",
+        "options": [
+            "Sie spielen den Ball, wie er liegt, da der Drop straflos war.",
+            "Sie müssen den Ball ein zweites Mal droppen.",
+            "Sie legen den Ball an die Stelle, an der er zuerst den Boden berührte.",
+            "Sie ziehen einen Strafschlag zu und droppen erneut."
+        ],
+        "answer_index": 1,
+        "explanation": "Kommt ein auf die richtige Weise gedroppter Ball außerhalb des Erleichterungsbereichs zur Ruhe, muss der Spieler ein zweites Mal einen Ball droppen. Erst wenn auch dieser außerhalb zur Ruhe kommt, wird er hingelegt (Regel 14.3c(2))."
+    },
+    {
+        "id": "VII.6",
+        "section": "VII. Erleichterung mit Strafe (Regeln 17-19)",
+        "question": "Sie spielen einen Ball. Es ist so gut wie sicher, dass er in einer Penalty Area liegt, er wird aber nicht gefunden. Wie viele Erleichterungsmöglichkeiten haben Sie?",
+        "image_query": "Ball verloren Penalty Area",
+        "options": [
+            "Eine: Nur Schlag und Distanzverlust.",
+            "Zwei: Schlag und Distanzverlust oder Auf der Linie zurück.",
+            "Drei: Abhängig davon, ob die Penalty Area rot oder gelb ist.",
+            "Fünf: Drei mit einem Strafschlag und zwei mit zwei Strafschlägen."
+        ],
+        "answer_index": 2,
+        "explanation": "Da der Ball in der Penalty Area als bekannt oder so gut wie sicher gilt, stehen dem Spieler die normalen Optionen der Penalty Area zur Verfügung. Gelbe PA: 2 Optionen. Rote PA: 3 Optionen (Regel 17.1c, 17.1d)."
+    },
+    {
+        "id": "VII.7",
+        "section": "VII. Erleichterung mit Strafe (Regeln 17-19)",
+        "question": "Was ist die Konsequenz, wenn Sie den ursprünglichen Ball spielen, nachdem Sie bereits einen provisorischen Ball ins Spiel gebracht haben?",
+        "image_query": "Provisorischer Ball gespielt",
+        "options": [
+            "Der ursprüngliche Ball wird zum Ball im Spiel, straflos.",
+            "Sie ziehen die Grundstrafe zu, da Sie einen falschen Ball gespielt haben.",
+            "Der ursprüngliche Ball ist nicht länger im Spiel und darf nicht gespielt werden.",
+            "Sie dürfen wählen, welchen Ball Sie weiterspielen."
+        ],
+        "answer_index": 2,
+        "explanation": "Sobald der Spieler einen anderen Ball mit Strafe von Schlag und Distanzverlust ins Spiel gebracht hat (auch wenn es ein provisorischer Ball war, der zum Ball im Spiel wurde), ist der ursprüngliche Ball nicht länger im Spiel und darf nicht gespielt werden (Regel 18.1)."
+    },
+    {
+        "id": "VII.8",
+        "section": "VII. Erleichterung mit Strafe (Regeln 17-19)",
+        "question": "Ihr Ball ist unspielbar. Sie wählen die Option 'Seitliche Erleichterung'. Wo wird der Erleichterungsbereich gemessen?",
+        "image_query": "Seitliche Erleichterung",
+        "options": [
+            "Innerhalb einer Schlägerlänge vom Bezugspunkt.",
+            "Innerhalb von zwei Schlägerlängen vom Bezugspunkt (Stelle des ursprünglichen Balls).",
+            "Innerhalb von zwei Schlägerlängen von der nächstgelegenen Stelle der vollständigen Erleichterung.",
+            "Innerhalb von vier Schlägerlängen von der Stelle, an der der Ball zuletzt die Grenze kreuzte."
+        ],
+        "answer_index": 1,
+        "explanation": "Bei seitlicher Erleichterung (Regel 19.2c) ist der Bezugspunkt die Stelle des ursprünglichen Balls. Der Erleichterungsbereich erstreckt sich von dort zwei Schlägerlängen, nicht näher zum Loch."
+    },
+    {
+        "id": "VII.9",
+        "section": "VII. Erleichterung mit Strafe (Regeln 17-19)",
+        "question": "Wann ist ein Spieler im Zählspiel **disqualifiziert**, nachdem er vom falschen Ort gespielt hat?",
+        "image_query": "Spielen vom falschen Ort Strafe",
+        "options": [
+            "Wenn er den Fehler nicht berichtigt, bevor er die Scorekarte einreicht.",
+            "Wenn er einen Schlag ausführt, bevor er sich entscheidet, einen zweiten Ball zu spielen.",
+            "Wenn er den Fehler nicht berichtigt, bevor er den nächsten Schlag ausführt.",
+            "Wenn er den Fehler nicht berichtigt, bevor er einen Schlag ausführt, um das nächste Loch zu beginnen."
+        ],
+        "answer_index": 3,
+        "explanation": "Spielt der Spieler vom falschen Ort, muss er den Fehler berichtigen. Wenn er den Fehler nicht berichtigt, bevor er einen Schlag ausführt, um das nächste Loch zu beginnen (oder am letzten Loch, bevor er die Scorekarte einreicht), ist er disqualifiziert (Regel 14.7b(1))."
+    },
+    {
+        "id": "VIII.2",
+        "section": "VIII. Vorgehensweise (Regeln 20)",
+        "question": "Sie spielen im Zählspiel mit zwei Bällen, da Sie unsicher über die Anwendung einer Regel sind. Was ist die Konsequenz, wenn Sie vergessen, dies der Spielleitung vor dem Einreichen der Scorekarte mitzuteilen?",
+        "image_query": "Zwei Bälle Scorekarte",
+        "options": [
+            "Sie sind disqualifiziert.",
+            "Sie erhalten die Grundstrafe.",
+            "Nur das Ergebnis des zuerst gespielten Balls zählt.",
+            "Das Ergebnis mit dem besseren Ball zählt, und Sie erhalten einen Strafschlag."
+        ],
+        "answer_index": 0,
+        "explanation": "Der Spieler ist disqualifiziert, wenn er es versäumt, den Sachverhalt der Spielleitung mitzuteilen, bevor er seine Scorekarte einreicht (Regel 20.1c(3))."
+    },
+    {
+        "id": "IX.3",
+        "section": "IX. Andere Spielformen (Regeln 21-24)",
+        "question": "Im Vierball schlägt Spieler A den Ball von der Stelle des Partners B. Was ist die Strafe?",
+        "image_query": "Partner spielt falschen Ball",
+        "options": [
+            "Nur Spieler A erhält die Grundstrafe (zwei Strafschläge), da er einen falschen Ball gespielt hat.",
+            "Die Partei (beide Spieler) ist disqualifiziert.",
+            "Die Strafe gilt nur für Spieler A, aber er muss den Fehler berichtigen.",
+            "Die Grundstrafe gilt nur für Spieler A, und der Schlag zählt nicht."
+        ],
+        "answer_index": 3,
+        "explanation": "Wenn ein Spieler im Vierball den Ball des Partners als falschen Ball spielt, zieht sich nur dieser Spieler die Grundstrafe (zwei Strafschläge) zu. Der Schlag zählt nicht, und der Fehler muss berichtigt werden (Regel 23.9a(2) Ausnahme zu Regel 6.3c)."
+    },
+    {
+        "id": "IX.4",
+        "section": "IX. Andere Spielformen (Regeln 21-24)",
+        "question": "Sie spielen Stableford und geben auf einem Loch auf, da Sie das Zielergebnis überschritten haben. Was müssen Sie auf der Scorekarte eintragen?",
+        "image_query": "Stableford 0 Punkte",
+        "options": [
+            "Das Ergebnis des vorigen Schlages plus die Grundstrafe.",
+            "Das tatsächliche Ergebnis, das höher ist als das Zielergebnis.",
+            "Die Scorekarte darf kein Ergebnis oder ein Ergebnis ausweisen, das keine Punkte ergibt.",
+            "Das Lochergebnis wird auf den Maximum Score reduziert."
+        ],
+        "answer_index": 2,
+        "explanation": "Zur Förderung der Spielgeschwindigkeit darf ein Spieler das Spielen eines Lochs beenden, wenn er dort keine Punkte mehr erzielen kann. Die Scorekarte darf entweder kein Ergebnis oder ein Ergebnis ausweisen, das keine Punkte ergibt (Regel 21.1b(2))."
+    },
+    {
+        "id": "X.3",
+        "section": "X. Spieler mit Behinderungen (Regeln 25)",
+        "question": "Ein Spieler mit Amputation, der aufgrund seiner Behinderung nicht ohne Verankerung schwingen kann, führt einen Schlag aus, während er den Schläger verankert. Was ist die Strafe?",
+        "image_query": "Verankerter Schläger",
+        "options": [
+            "Grundstrafe (Verstoß gegen Regel 10.1b).",
+            "Keine Strafe.",
+            "Ein Strafschlag.",
+            "Disqualifikation."
+        ],
+        "answer_index": 1,
+        "explanation": "Für Spieler mit Amputation, die aufgrund fehlender Gliedmaßen nicht in der Lage sind, die meisten Schläger ohne Verankerung zu schwingen, darf der Schlag verankert ausgeführt werden, ohne Strafe (Regel 25.3b)."
+    },
+    {
+        "id": "X.4",
+        "section": "X. Spieler mit Behinderungen (Regeln 25)",
+        "question": "Welche Erleichterung gilt für einen blinden Spieler bezüglich der Berührung von Sand in einem Bunker?",
+        "image_query": "Blinder Golfer im Bunker",
+        "options": [
+            "Der Spieler muss die normalen Bunkerregeln befolgen (keine Ausnahmen).",
+            "Er darf den Sand im Rückschwung berühren, wenn er sich im Bereich unmittelbar vor dem Ball befindet.",
+            "Er darf den Sand im Bereich direkt vor oder hinter dem Ball berühren.",
+            "Er darf den Sand im Rückschwung berühren, aber nicht den Sand direkt vor oder hinter dem Ball."
+        ],
+        "answer_index": 2,
+        "explanation": "Ein blinder Spieler darf den Sand im Bunker mit einem Schläger straflos berühren: im Bereich direkt vor oder direkt hinter dem Ball, und beim Rückschwung für einen Schlag (Regel 25.2f)."
+    },
+    {
+        "id": "X.5",
+        "section": "X. Spieler mit Behinderungen (Regeln 25)",
+        "question": "Welchen Status hat ein Betreuer, der von der Spielleitung zur allgemeinen Hilfe für Spieler mit intellektueller Beeinträchtigung abgestellt wird?",
+        "image_query": "Betreuer Golfturnier",
+        "options": [
+            "Caddie des Spielers.",
+            "Partner des Spielers.",
+            "Äußerer Einfluss.",
+            "Hilfsperson mit allen Rechten des Caddies."
+        ],
+        "answer_index": 2,
+        "explanation": "Ein Betreuer, der von der Spielleitung abgestellt wird, um Spielern mit intellektueller Beeinträchtigung zu helfen, ist im Sinne der Regeln ein Äußerer Einfluss. Er darf dem Spieler keine Beratung erteilen (Regel 25.5a)."
+    },
+    {
+        "id": "I.7",
+        "section": "I. Grundlagen & Ausrüstung (Regeln 1-4)",
+        "question": "Was ist die Strafe, wenn ein Spieler im Zählspiel seine Runde mit 15 Schlägern beginnt?",
+        "image_query": "15 Schläger",
+        "options": [
+            "Grundstrafe am ersten Loch und der Schläger muss aus dem Spiel genommen werden.",
+            "Zwei Strafschläge für jedes Loch, an dem der Verstoß vorlag, maximal vier Strafschläge für die Runde.",
+            "Disqualifikation.",
+            "Keine Strafe, solange der 15. Schläger nicht benutzt wird."
+        ],
+        "answer_index": 1,
+        "explanation": "Die Strafe für Verstoß gegen Regel 4.1b (Höchstzahl von 14 Schlägern) sind zwei Strafschläge für jedes Loch, maximal jedoch vier Strafschläge für die Runde (Regel 4.1b)."
+    },
+    {
+        "id": "I.8",
+        "section": "I. Grundlagen & Ausrüstung (Regeln 1-4)",
+        "question": "Ein Spieler leiht sich während der Runde einen Schläger von einem anderen Spieler, der ebenfalls am Turnier teilnimmt. Was ist die Strafe?",
+        "image_query": "Schläger ausleihen",
+        "options": [
+            "Grundstrafe am Ende des Lochs.",
+            "Zwei Strafschläge für jedes Loch, an dem der Schläger benutzt wurde.",
+            "Disqualifikation.",
+            "Die Grundstrafe für jeden Spieler, der dies vereinbarte."
+        ],
+        "answer_index": 2,
+        "explanation": "Der Spieler darf keinen Schläger hinzufügen oder ausleihen, der von einem oder für einen anderen Spieler, der auf dem Platz spielt, mitgeführt wird. Die Strafe für Verstoß ist die Disqualifikation (Regel 4.1b(4))."
+    },
+    {
+        "id": "I.9",
+        "section": "I. Grundlagen & Ausrüstung (Regeln 1-4)",
+        "question": "Was gehört nicht zu den fünf festgelegten Bereichen des Platzes?",
+        "image_query": "Fünf Bereiche Golfplatz",
+        "options": [
+            "Der Abschlag des Lochs, das gerade gespielt wird.",
+            "Alle Penalty Areas.",
+            "Der Übungsbereich.",
+            "Das Gelände."
+        ],
+        "answer_index": 2,
+        "explanation": "Die fünf Bereiche sind: das Gelände, der Abschlag, alle Penalty Areas, alle Bunker und das Grün des Lochs. Der Übungsbereich (oder das Aus) gehört nicht dazu (Regel 2.2)."
+    },
+    {
+        "id": "I.10",
+        "section": "I. Grundlagen & Ausrüstung (Regeln 1-4)",
+        "question": "Ein Spieler schlägt seinen Ball im Zählspiel. Der Ball bricht dabei in Stücke. Was muss der Spieler tun?",
+        "image_query": "Ball bricht in Stücke",
+        "options": [
+            "Er spielt einen neuen Ball von der Stelle des Schlages, straflos.",
+            "Er spielt einen neuen Ball von der Stelle des Schlages, mit einem Strafschlag.",
+            "Er muss den Schlag wiederholen, straflos.",
+            "Der Ball gilt als unspielbar, mit einem Strafschlag."
+        ],
+        "answer_index": 0,
+        "explanation": "Bricht der Ball eines Spielers nach einem Schlag in Stücke, ist dies straflos, der Schlag zählt nicht. Der Spieler muss einen anderen Ball von der Stelle spielen, an der dieser Schlag ausgeführt wurde (Regel 4.2b)."
+    },
+    {
+        "id": "II.7",
+        "section": "II. Spielen der Runde & Lochs (Regeln 5-6)",
+        "question": "Wann darf ein Spieler einen Mitspieler bitten, außer der Reihe zu spielen (Ready Golf)?",
+        "image_query": "Ready Golf Spielfolge",
+        "options": [
+            "Nur im Zählspiel, um Zeit zu sparen.",
+            "Nur im Lochspiel, wenn der Gegner damit einverstanden ist.",
+            "Im Lochspiel darf der Spieler darum bitten, wenn es zur Schonung des Platzes dient.",
+            "Im Lochspiel und Zählspiel, wenn es zur Schonung des Platzes dient."
+        ],
+        "answer_index": 1,
+        "explanation": "Im Lochspiel dürfen Spieler übereinkommen, dass einer von ihnen außerhalb der Reihenfolge spielt, um Zeit zu sparen (Regel 6.4a Ausnahme). Im Zählspiel ist dies ohne Absprache erlaubt (Regel 6.4b(2))."
+    },
+    {
+        "id": "II.8",
+        "section": "II. Spielen der Runde & Lochs (Regeln 5-6)",
+        "question": "Ein Spieler schlägt im Lochspiel vom falschen Abschlag ab. Der Gegner möchte, dass der Schlag zählt. Was ist die Folge?",
+        "image_query": "Abschlag falscher Ort Lochspiel",
+        "options": [
+            "Der Schlag zählt, und der Ball ist im Spiel.",
+            "Der Spieler erhält die Grundstrafe.",
+            "Der Gegner muss den Schlag für ungültig erklären, sonst zieht er selbst eine Strafe zu.",
+            "Das Loch wird geteilt."
+        ],
+        "answer_index": 0,
+        "explanation": "Der Schlag ist straflos, und der Gegner darf den Schlag für ungültig erklären. Erklärt der Gegner den Schlag NICHT für ungültig, zählt der Schlag, und der Ball ist im Spiel (Regel 6.1b(1))."
+    },
+    {
+        "id": "II.9",
+        "section": "II. Spielen der Runde & Lochs (Regeln 5-6)",
+        "question": "Nach Regel 5.5b ist das Üben von Putten oder Chippen nach Beendigung eines Lochs nur auf oder nahe dem Grün des zuletzt gespielten Lochs, jedem Übungsgrün und dem Abschlag des nächsten Lochs erlaubt. Welche Einschränkung gilt dabei?",
+        "image_query": "Übungsschlag Bunker",
+        "options": [
+            "Es darf nur das Putten, nicht das Chippen geübt werden.",
+            "Solche Übungsschläge dürfen nicht aus einem Bunker ausgeführt werden.",
+            "Es muss das Einverständnis der Gruppe eingeholt werden.",
+            "Die Bälle dürfen nicht gereinigt werden."
+        ],
+        "answer_index": 1,
+        "explanation": "Die Ausnahme erlaubt das Üben von Putten oder Chippen auf den genannten Flächen, aber solche Übungsschläge dürfen nicht aus einem Bunker ausgeführt werden (Regel 5.5b Ausnahme)."
+    },
+    {
+        "id": "II.10",
+        "section": "II. Spielen der Runde & Lochs (Regeln 5-6)",
+        "question": "Was passiert im Lochspiel, wenn Sie außerhalb der Reihenfolge spielen?",
+        "image_query": "Spielfolge Lochspiel",
+        "options": [
+            "Der Gegner darf den Schlag für ungültig erklären.",
+            "Sie ziehen sich einen Strafschlag zu.",
+            "Sie verlieren das Loch.",
+            "Der Schlag ist straflos und zählt immer."
+        ],
+        "answer_index": 0,
+        "explanation": "Spielt der Spieler, wenn sein Gegner an der Reihe war, ist dies straflos, aber der Gegner hat das Recht, den Schlag für ungültig zu erklären (Regel 6.4a(2))."
+    },
+    {
+        "id": "III.13",
+        "section": "III. Spielen des Balls (Regeln 7-11)",
+        "question": "Was passiert, wenn ein Spieler im Zählspiel absichtlich den sich bewegenden Ball eines anderen Spielers ablenkt?",
+        "image_query": "Spieler lenkt Ball ab",
+        "options": [
+            "Der Schlag des anderen Spielers muss straflos wiederholt werden.",
+            "Der ablenkende Spieler zieht sich die Grundstrafe zu.",
+            "Es ist straflos, aber der Ball muss an die geschätzte Stelle gelegt werden.",
+            "Beide Spieler ziehen sich die Grundstrafe zu."
+        ],
+        "answer_index": 1,
+        "explanation": "Ein Spieler zieht sich die Grundstrafe zu, wenn er absichtlich einen Ball in Bewegung ablenkt oder aufhält, unabhängig davon, ob es sein eigener Ball oder der Ball eines anderen Spielers ist (Regel 11.2b)."
+    },
+    {
+        "id": "III.14",
+        "section": "III. Spielen des Balls (Regeln 7-11)",
+        "question": "Ihr Ball kommt zur Ruhe. Er bewegt sich, weil Sie einen Übungsschwung ausführen, der den Boden in der Nähe des Balls berührt. Was ist die Strafe?",
+        "image_query": "Übungsschwung bewegt Ball",
+        "options": [
+            "Keine Strafe, wenn der Ball zurückgelegt wird.",
+            "Grundstrafe, da der Spieler die Bewegung verursacht hat.",
+            "Ein Strafschlag, da der Spieler die Bewegung verursacht hat.",
+            "Der Schlag muss wiederholt werden."
+        ],
+        "answer_index": 2,
+        "explanation": "Verursacht der Spieler (oder sein Caddie) die Bewegung des Balls in Ruhe, zieht er sich einen Strafschlag zu und muss den Ball zurücklegen (Regel 9.4b). Dies gilt nicht auf dem Abschlag oder Grün."
+    },
+    {
+        "id": "III.15",
+        "section": "III. Spielen des Balls (Regeln 7-11)",
+        "question": "Ihr Ball liegt in Ruhe. Ein äußerer Einfluss (z.B. ein Vogel oder ein anderer Ball im Zählspiel) bewegt Ihren Ball. Was ist die Folge?",
+        "image_query": "Vogel bewegt Ball",
+        "options": [
+            "Der Ball muss von der neuen Stelle gespielt werden, straflos.",
+            "Der Ball muss an die ursprüngliche Stelle zurückgelegt werden, straflos.",
+            "Sie ziehen einen Strafschlag zu und legen den Ball zurück.",
+            "Die Grundstrafe für den äußeren Einfluss."
+        ],
+        "answer_index": 1,
+        "explanation": "Wird ein Ball in Ruhe durch einen äußeren Einfluss bewegt (Regel 9.6), ist dies straflos, und der Ball muss an seine ursprüngliche Stelle zurückgelegt werden."
+    },
+    {
+        "id": "III.16",
+        "section": "III. Spielen des Balls (Regeln 7-11)",
+        "question": "Sie spielen einen Schlag. Der Ball trifft ein unbewegliches Hemmnis (z.B. einen Bewässerungskopf) und lenkt den Ball zu Ihrem Vorteil ab. Was ist die Folge?",
+        "image_query": "Ball trifft Bewässerungskopf",
+        "options": [
+            "Der Schlag muss straflos wiederholt werden.",
+            "Sie ziehen die Grundstrafe zu.",
+            "Der Schlag zählt, und der Ball wird gespielt, wie er liegt.",
+            "Der Schlag muss wiederholt werden, mit einem Strafschlag."
+        ],
+        "answer_index": 2,
+        "explanation": "Trifft der Ball in Bewegung versehentlich einen äußeren Einfluss (wie ein unbewegliches Hemmnis), ist dies straflos, und der Ball wird gespielt, wie er liegt (Regel 11.1a)."
+    },
+    {
+        "id": "IV.9",
+        "section": "IV. Sonderregeln für Bunker & Grüns (Regeln 12-13)",
+        "question": "Ihr Ball ragt über den Lochrand hinaus. Ein Mitspieler hebt ihn auf, nachdem er sich nach 5 Sekunden nicht bewegt hat. Was ist die Konsequenz im Zählspiel?",
+        "image_query": "Mitspieler hebt Ball am Lochrand",
+        "options": [
+            "Der Spieler zieht einen Strafschlag zu, da er die Bewegung verursacht hat.",
+            "Der Ball des Spielers gilt als eingelocht, und der Mitspieler zieht die Grundstrafe zu.",
+            "Der Spieler muss den Schlag wiederholen.",
+            "Der Mitspieler zieht die Grundstrafe zu, und der Ball muss zurückgelegt werden."
+        ],
+        "answer_index": 1,
+        "explanation": "Hebt ein anderer Spieler absichtlich den Ball des Spielers auf, bevor die Wartezeit endet, gilt der Ball des Spielers als eingelocht, und der andere Spieler zieht sich die Grundstrafe zu (Regel 13.3b)."
+    },
+    {
+        "id": "IV.10",
+        "section": "IV. Sonderregeln für Bunker & Grüns (Regeln 12-13)",
+        "question": "Was ist die Folge, wenn ein Spieler im Bunker den Sand absichtlich berührt, um dessen Zustand zu prüfen?",
+        "image_query": "Sandzustand prüfen",
+        "options": [
+            "Dies ist straflos, um Hinweise für den nächsten Schlag zu erhalten.",
+            "Grundstrafe (Zwei Strafschläge).",
+            "Ein Strafschlag.",
+            "Der Spieler muss den Ball im Bunker für unspielbar erklären."
+        ],
+        "answer_index": 1,
+        "explanation": "Das absichtliche Berühren des Sandes, um den Zustand zu prüfen und dadurch Hinweise für den nächsten Schlag zu erhalten, ist verboten und zieht die Grundstrafe nach sich (Regel 12.2b(1))."
+    },
+    {
+        "id": "IV.11",
+        "section": "IV. Sonderregeln für Bunker & Grüns (Regeln 12-13)",
+        "question": "Welche Art von Schäden auf dem Grün darf jederzeit ausgebessert werden?",
+        "image_query": "Schaden auf Grün",
+        "options": [
+            "Alle Schäden, einschließlich der durch Bodenbelüftungslöcher entstandenen.",
+            "Nur Balleinschlaglöcher und Schäden durch Schuhe (z.B. Spikemarken).",
+            "Alle Schäden, außer solchen, die durch Wind oder Wasser verursacht wurden.",
+            "Alle Schäden, außer natürlichen Oberflächenunebenheiten und Schäden durch übliche Pflegearbeiten."
+        ],
+        "answer_index": 3,
+        "explanation": "Der Begriff 'Schäden auf dem Grün' umfasst unter anderem Balleinschlaglöcher und Schuhschäden, schließt aber Schäden durch übliche Pflegearbeiten (wie Bodenbelüftungslöcher) und natürliche Oberflächenunebenheiten aus (Regel 13.1c(2))."
+    },
+    {
+        "id": "IV.12",
+        "section": "IV. Sonderregeln für Bunker & Grüns (Regeln 12-13)",
+        "question": "Ihr Ball liegt außerhalb des Bunkers. Sie entfernen Sand vom Fairway, der Ihren Schlag beeinträchtigt, aber der Sand stammt aus dem Bunker. Ist dies erlaubt?",
+        "image_query": "Sand aus Bunker entfernen",
+        "options": [
+            "Nein, Sand aus dem Bunker darf nicht entfernt werden (Grundstrafe).",
+            "Ja, dies ist straflos, da Sand außerhalb des Bunkers als loser hinderlicher Naturstoff behandelt wird.",
+            "Ja, aber nur, wenn Sie dafür den Fuß und nicht den Schläger benutzen.",
+            "Nein, da Sand generell kein loser hinderlicher Naturstoff ist."
+        ],
+        "answer_index": 1,
+        "explanation": "Sand oder loses Erdreich, die außerhalb des Bunkers liegen, dürfen straflos entfernt werden. Sand ist außerhalb des Bunkers kein fester Bestandteil (Regel 13.1c(1))."
+    },
+    {
+        "id": "V.5",
+        "section": "VI. Straflose Erleichterung (Regeln 14-16)",
+        "question": "Ein Spieler nimmt Erleichterung auf der Linie zurück in Anspruch. Die Stelle, an der der Ball gedroppt wird, schafft einen Erleichterungsbereich. Wie groß ist dieser Bereich?",
+        "image_query": "Erleichterung auf der Linie",
+        "options": [
+            "Zwei Schlägerlängen in jede Richtung.",
+            "Zwei Schlägerlängen von der Bezugslinie.",
+            "Eine Schlägerlänge in jede Richtung von der Stelle, an der der Ball zuerst den Boden berührt.",
+            "Eine Schlägerlänge von der Bezugslinie, nicht näher zum Loch."
+        ],
+        "answer_index": 2,
+        "explanation": "Bei Erleichterung auf der Linie zurück muss der Ball auf der Linie gedroppt werden. Die Stelle, an der er zuerst den Boden berührt, schafft einen Erleichterungsbereich von einer Schlägerlänge in alle Richtungen von diesem Punkt aus (Regel 14.3b(3))."
+    },
+    {
+        "id": "VI.9",
+        "section": "VI. Straflose Erleichterung (Regeln 14-16)",
+        "question": "Ihr Ball liegt im Gelände und wird durch ein Loch, das durch einen Erdbohrer für einen entfernten Pfahl entstanden ist, beeinträchtigt. Wie verfahren Sie?",
+        "image_query": "Erdbohrer Loch UPV",
+        "options": [
+            "Sie erhalten Erleichterung mit einem Strafschlag.",
+            "Sie erhalten straflose Erleichterung, da es sich um ein von der Spielleitung verursachtes Loch handelt.",
+            "Sie müssen den Ball spielen, wie er liegt.",
+            "Sie können den Ball für unspielbar erklären."
+        ],
+        "answer_index": 1,
+        "explanation": "Ein solches Loch ist ein Teil des Bodens in Ausbesserung (UPV). Der Spieler darf straflose Erleichterung in Anspruch nehmen (Regel 16.1)."
+    },
+    {
+        "id": "VI.10",
+        "section": "VI. Straflose Erleichterung (Regeln 14-16)",
+        "question": "Wann darf ein Spieler einen Ball, der außerhalb des Grüns aufgenommen wurde, reinigen?",
+        "image_query": "Ball reinigen",
+        "options": [
+            "Immer, außer wenn er zur Identifizierung aufgenommen wurde.",
+            "Immer, außer wenn er aufgenommen wurde, um zu prüfen, ob er eine Kerbe hat.",
+            "Nur, wenn er in einer Penalty Area liegt.",
+            "Nur, wenn die Scorekarte des Gegners falsch ist."
+        ],
+        "answer_index": 1,
+        "explanation": "Ein an anderer Stelle (nicht Grün) aufgenommener Ball darf immer gereinigt werden, außer wenn er aufgenommen wurde, um zu prüfen, ob er eine Kerbe oder einen Sprung hat (Regel 14.1c)."
+    },
+    {
+        "id": "VI.11",
+        "section": "VI. Straflose Erleichterung (Regeln 14-16)",
+        "question": "Ihr Ball liegt auf einer Ameisenstraße. Sie entfernen den Hügel und bewegen dabei versehentlich den Ball. Was ist die Folge?",
+        "image_query": "Ameisenhügel bewegt Ball Strafe",
+        "options": [
+            "Grundstrafe, da Ameisenhügel lose hinderliche Naturstoffe sind.",
+            "Ein Strafschlag, da der Ball im Gelände bewegt wurde.",
+            "Keine Strafe, aber der Ball muss zurückgelegt werden.",
+            "Die Grundstrafe für das Entfernen eines beweglichen Hemmnisses."
+        ],
+        "answer_index": 2,
+        "explanation": "Ameisenhügel sind lose hinderliche Naturstoffe. Verursacht das Entfernen eines losen hinderlichen Naturstoffs durch einen Spieler die Bewegung seines Balls außerhalb des Grüns, zieht er sich einen Strafschlag zu (Regel 15.1b, Regel 9.4b). Da Ameisenhügel jedoch auch als Tierloch gelten, kann straflose Erleichterung genommen werden."
+    },
+    {
+        "id": "VII.10",
+        "section": "VII. Erleichterung mit Strafe (Regeln 17-19)",
+        "question": "Sie spielen Ihren Ball in einer Penalty Area. Der Ball kommt in derselben Penalty Area zur Ruhe. Welche der folgenden Optionen steht Ihnen **nicht** zur Verfügung?",
+        "image_query": "Ball bleibt in Penalty Area",
+        "options": [
+            "Erleichterung mit Schlag und Distanzverlust (1 Strafschlag).",
+            "Erleichterung auf der Linie zurück (1 Strafschlag).",
+            "Seitliche Erleichterung (nur bei roter PA, 1 Strafschlag).",
+            "Zwei Strafschläge, um an der Stelle des vorigen Schlags außerhalb der PA zu droppen."
+        ],
+        "answer_index": 3,
+        "explanation": "Wenn der Ball innerhalb der PA gespielt wird und in der PA zur Ruhe kommt, hat der Spieler die normalen Optionen (17.1d) mit einem Strafschlag. Die Option, von der Stelle des vorigen Schlags **außerhalb** der PA mit **zwei** Strafschlägen zu spielen (Regel 17.2a(2)), ist nur verfügbar, wenn der Schlag außerhalb der PA ausgeführt wurde und der Ball in der PA landete."
+    },
+    {
+        "id": "VII.11",
+        "section": "VII. Erleichterung mit Strafe (Regeln 17-19)",
+        "question": "Sie erklären Ihren Ball im Gelände für unspielbar. Sie entscheiden sich für die Erleichterung 'Schlag und Distanzverlust'. Wie viele Strafschläge ziehen Sie sich zu?",
+        "image_query": "Unspielbarer Ball Schlag Distanzverlust",
+        "options": [
+            "Keine Strafe.",
+            "Einen Strafschlag.",
+            "Zwei Strafschläge.",
+            "Die Grundstrafe plus Schlag und Distanzverlust."
+        ],
+        "answer_index": 1,
+        "explanation": "Die Erleichterung für einen unspielbaren Ball kostet immer einen Strafschlag, unabhängig von der gewählten Option (Schlag und Distanzverlust, Auf der Linie zurück, Seitliche Erleichterung) (Regel 19.2)."
+    },
+    {
+        "id": "III.17",
+        "section": "III. Spielen des Balls (Regeln 7-11)",
+        "question": "Wann ist es straflos, wenn Ihr Ball in Ruhe auf dem Grün versehentlich bewegt wird?",
+        "image_query": "Ball auf Grün versehentlich bewegt",
+        "options": [
+            "Nur wenn Sie die Bewegung nicht selbst verursacht haben.",
+            "Immer, unabhängig davon, wie die Bewegung verursacht wurde.",
+            "Nur wenn Sie den Ball markiert haben.",
+            "Nur wenn der Ball durch Naturkräfte bewegt wurde."
+        ],
+        "answer_index": 1,
+        "explanation": "Es ist straflos, wenn ein Spieler, Gegner oder ein anderer Spieler im Zählspiel versehentlich den Ball oder Ballmarker des Spielers auf dem Grün bewegt (Regel 13.1d(1))."
+    },
+    {
+        "id": "IV.13",
+        "section": "IV. Sonderregeln für Bunker & Grüns (Regeln 12-13)",
+        "question": "Wann dürfen Sie Sand im Bunker nach dem Schlag einebnen?",
+        "image_query": "Bunker harken nach Schlag",
+        "options": [
+            "Bevor Sie den Schlag ausführen.",
+            "Nachdem der Ball den Bunker verlassen hat oder Sie Erleichterung außerhalb des Bunkers in Anspruch genommen haben.",
+            "Nur, wenn Sie sich dabei nicht auf der Spiellinie zum nächsten Schlag befinden.",
+            "Nie, da es die Bedingungen des Platzes verändern könnte."
+        ],
+        "answer_index": 1,
+        "explanation": "Nachdem ein Ball im Bunker gespielt wurde und sich außerhalb des Bunkers befindet oder der Spieler Erleichterung außerhalb des Bunkers genommen hat, darf der Spieler den Sand straflos zum Zweck der Platzpflege einebnen (Regel 12.2b(3))."
+    },
+    {
+        "id": "III.18",
+        "section": "III. Spielen des Balls (Regeln 7-11)",
+        "question": "Ihr Ball kommt zur Ruhe. Sie bemerken, dass er in einer Fuchsfährte liegt. Was ist die Konsequenz, wenn Sie die Fuchsfährte ausbessern?",
+        "image_query": "Fuchsfährte ausbessern",
+        "options": [
+            "Grundstrafe für das Verbessern der Bedingungen.",
+            "Ein Strafschlag.",
+            "Straflos, da es sich um ein Tierloch handelt.",
+            "Straflos, wenn der Ball zurückgelegt wird."
+        ],
+        "answer_index": 2,
+        "explanation": "Eine Fuchsfährte ist ein Tierloch und gehört zu den Ungewöhnlichen Platzverhältnissen (UPV). UPV dürfen nicht einfach ausgebessert werden (Regel 8.1a). Der Spieler muss straflose Erleichterung nehmen (Regel 16.1)."
+    },
+    {
+        "id": "II.11",
+        "section": "II. Spielen der Runde & Lochs (Regeln 5-6)",
+        "question": "Ein Spieler schlägt im Zählspiel vom falschen Abschlag ab. Er korrigiert den Fehler, bevor er den nächsten Schlag beginnt. Was ist die Strafe?",
+        "image_query": "Falscher Abschlag Zählspiel Strafe",
+        "options": [
+            "Grundstrafe (zwei Strafschläge).",
+            "Ein Strafschlag.",
+            "Keine Strafe.",
+            "Disqualifikation."
+        ],
+        "answer_index": 0,
+        "explanation": "Der Spieler zieht sich die Grundstrafe (zwei Strafschläge) zu und muss den Fehler berichtigen, indem er einen Ball von innerhalb des Abschlags spielt. Der falsch gespielte Schlag zählt nicht (Regel 6.1b(2))."
+    },
+    {
+        "id": "VII.12",
+        "section": "VII. Erleichterung mit Strafe (Regeln 17-19)",
+        "question": "Welche Farbe wird verwendet, um Penalty Areas zu kennzeichnen, die eine zusätzliche seitliche Erleichterungsmöglichkeit bieten?",
+        "image_query": "Rote Penalty Area Markierung",
+        "options": [
+            "Gelb.",
+            "Blau.",
+            "Rot.",
+            "Weiß."
+        ],
+        "answer_index": 2,
+        "explanation": "Rote Penalty Areas bieten zusätzlich die Möglichkeit der seitlichen Erleichterung. Gelbe Penalty Areas bieten nur die Optionen Schlag und Distanzverlust sowie Auf der Linie zurück (Regel 17.1d)."
+    },
+    {
+        "id": "VI.12",
+        "section": "VI. Straflose Erleichterung (Regeln 14-16)",
+        "question": "Ihr Ball liegt in einer Roten Penalty Area. Sie nehmen Erleichterung auf der Linie zurück. Wo liegt der Bezugspunkt?",
+        "image_query": "Erleichterung auf der Linie Bezugspunkt",
+        "options": [
+            "Die Stelle des Balls.",
+            "Der nächstgelegene Punkt der vollständigen Erleichterung.",
+            "Der geschätzte Punkt, an dem der ursprüngliche Ball zuletzt die Grenze der PA kreuzte.",
+            "Der geschätzte Punkt, an dem der Ball zur Ruhe kam."
+        ],
+        "answer_index": 2,
+        "explanation": "Bei der Erleichterung 'auf der Linie zurück' (Regel 17.1d(2)) ist der Bezugspunkt der geschätzte Punkt, an dem der ursprüngliche Ball zuletzt die Grenze der Penalty Area kreuzte. Von dort wird die Bezugslinie zum Loch gezogen."
+    },
+    {
+        "id": "VIII.4",
+        "section": "VIII. Vorgehensweise (Regeln 20)",
+        "question": "Was geschieht, wenn ein Spieler im Zählspiel versehentlich eine Scorekarte mit einem **höheren** Lochergebnis als tatsächlich gespielt einreicht?",
+        "image_query": "Scorekarte falsches Ergebnis",
+        "options": [
+            "Der Spieler ist disqualifiziert.",
+            "Das eingetragene höhere Ergebnis gilt.",
+            "Das Ergebnis wird korrigiert und der Spieler erhält einen Strafschlag.",
+            "Der Spieler muss die Runde erneut spielen."
+        ],
+        "answer_index": 1,
+        "explanation": "Ist das eingetragene Ergebnis höher als das tatsächliche Ergebnis, gilt das eingetragene höhere Ergebnis für das Loch (Regel 3.3b(3))."
+    },
+    {
+        "id": "III.19",
+        "section": "III. Spielen des Balls (Regeln 7-11)",
+        "question": "Ein Spieler schlägt im Zählspiel. Der Ball bewegt sich, nachdem er den Rückschwung begonnen hat. Was muss der Spieler tun?",
+        "image_query": "Rückschwung Ball bewegt sich",
+        "options": [
+            "Er muss den Schlag wiederholen, straflos.",
+            "Der Schlag zählt und der Ball muss von der neuen Stelle gespielt werden.",
+            "Der Ball muss zurückgelegt werden, und der Spieler erhält einen Strafschlag.",
+            "Der Spieler muss den Ball an die ursprüngliche Stelle zurücklegen, straflos."
+        ],
+        "answer_index": 1,
+        "explanation": "Beginnt sich der Ball in Ruhe zu bewegen, nachdem der Spieler den Schlag oder Rückschwung begonnen hat und den Schlag dann ausführt, darf der Ball nicht zurückgelegt werden. Der Schlag zählt, und der Ball muss von der Stelle gespielt werden, an der er zur Ruhe kommt (Regel 9.1b)."
+    },
+    {
+        "id": "IV.14",
+        "section": "IV. Sonderregeln für Bunker & Grüns (Regeln 12-13)",
+        "question": "Ein Ball liegt im Gelände, aber seine Spiellinie zum Loch wird durch Sand eines Bunkers beeinträchtigt. Was dürfen Sie tun?",
+        "image_query": "Sand Spiellinie",
+        "options": [
+            "Den Sand vom Bunker bis zur Spiellinie entfernen (straflos).",
+            "Den Sand nur außerhalb des Bunkers entlang der Spiellinie entfernen (straflos).",
+            "Nichts, da das Verbessern der Spiellinie im Gelände nicht erlaubt ist.",
+            "Erleichterung vom unbeweglichen Sand im Bunker nehmen."
+        ],
+        "answer_index": 2,
+        "explanation": "Regel 12.2b(1) verbietet das Berühren des Sandes vor dem Schlag. Außerhalb des Bunkers gilt Regel 8.1a, die das Entfernen von Sand oder losem Erdreich auf der Spiellinie verbietet (Grundstrafe)."
+    },
+    {
+        "id": "X.6",
+        "section": "X. Spieler mit Behinderungen (Regeln 25)",
+        "question": "Wie wird der Status 'Stand' für einen Spieler definiert, der eine Mobilitätshilfe (z.B. Rollstuhl) benutzt?",
+        "image_query": "Stand Rollstuhl Golf",
+        "options": [
+            "Nur die Stellung der Füße zählt.",
+            "Die Stellung der Füße und des Körpers, aber nicht die Mobilitätshilfe.",
+            "Die Stellung der Füße und des Körpers sowie die Stellung der Mobilitätshilfe.",
+            "Der Stand ist nicht definiert, da die Mobilitätshilfe als Hemmnis gilt."
+        ],
+        "answer_index": 2,
+        "explanation": "Für Spieler, die eine Mobilitätshilfe benutzen, wird die Definition des Begriffs 'Stand' dahingehend geändert, dass er auch die Stellung der Mobilitätshilfe mit einschließt (Regel 25.4d)."
+    },
+    {
+        "id": "V.6",
+        "section": "VI. Straflose Erleichterung (Regeln 14-16)",
+        "question": "Wird ein Ball, der außerhalb des Grüns aufgenommen wurde, gereinigt, obwohl dies nicht erlaubt ist, zieht sich der Spieler einen Strafschlag zu. Was muss er danach tun?",
+        "image_query": "Ball unzulässig gereinigt",
+        "options": [
+            "Er muss den Ball erneut droppen.",
+            "Er muss den Ball von der Stelle des vorigen Schlages spielen.",
+            "Er muss den Ball an die Stelle zurücklegen, von der er aufgenommen wurde.",
+            "Er muss das Loch mit einem Strafschlag beenden."
+        ],
+        "answer_index": 2,
+        "explanation": "Reinigt der Spieler seinen Ball, wenn dies nicht erlaubt ist, zieht er sich einen Strafschlag zu und muss den Ball an die Stelle zurücklegen, von der er aufgenommen wurde (Regel 14.1c)."
+    },
+    {
+        "id": "VI.13",
+        "section": "VI. Straflose Erleichterung (Regeln 14-16)",
+        "question": "Ihr Ball liegt im Gelände. Sie finden in der Nähe einen Baum, der nur lose Zweige hat. Sie entfernen einen der Äste und bewegen den Ball versehentlich. Was ist die Folge?",
+        "image_query": "Loser Zweig bewegt Ball",
+        "options": [
+            "Straflos, da es sich um einen losen hinderlichen Naturstoff handelt; Ball zurücklegen.",
+            "Ein Strafschlag, da Sie die Bewegung des Balls verursacht haben; Ball zurücklegen.",
+            "Grundstrafe, da Sie die Bedingungen verbessert haben.",
+            "Der Ball muss von der neuen Stelle gespielt werden, straflos."
+        ],
+        "answer_index": 1,
+        "explanation": "Das Entfernen eines losen hinderlichen Naturstoffs, das die Bewegung des Balls außerhalb des Grüns verursacht, zieht einen Strafschlag nach sich, und der Ball muss zurückgelegt werden (Regel 15.1b, Regel 9.4b)."
+    },
+    {
+        "id": "III.20",
+        "section": "III. Spielen des Balls (Regeln 7-11)",
+        "question": "Ihr Ball kommt zur Ruhe in einem Teil des Geländes, das Sie für unspielbar halten. Wie lange haben Sie Zeit, um nach dem Ball zu suchen, bevor er als verloren gilt?",
+        "image_query": "Ballsuche im Gelände",
+        "options": [
+            "Fünf Minuten.",
+            "Drei Minuten.",
+            "Zwei Minuten.",
+            "Zehn Minuten."
+        ],
+        "answer_index": 1,
+        "explanation": "Ein Ball ist verloren, wenn er nicht innerhalb von drei Minuten gefunden wurde, nachdem der Spieler oder sein Caddie begonnen hat, nach ihm zu suchen (Regel 18.2a(1))."
+    },
+    {
+        "id": "IX.5",
+        "section": "IX. Andere Spielformen (Regeln 21-24)",
+        "question": "Im Vierer (Foursomes) schlägt Partner A den Ball. Was ist der nächste Schritt der Partei, wenn dieser Schlag annulliert wird?",
+        "image_query": "Schlag annulliert Vierer",
+        "options": [
+            "Partner B muss den Schlag ausführen, um die abwechselnde Reihenfolge beizubehalten.",
+            "Partner A muss den Schlag erneut ausführen.",
+            "Die Partei muss mit Schlag und Distanzverlust verfahren.",
+            "Die Partei zieht die Grundstrafe zu."
+        ],
+        "answer_index": 1,
+        "explanation": "Wird ein Schlag annulliert, wiederholt oder zählt er nach einer Regel nicht, muss derselbe Partner, der den Schlag ausgeführt hatte, den nächsten Schlag der Partei ausführen (Regel 22.3)."
+    },
+    {
+        "id": "VII.13",
+        "section": "VII. Erleichterung mit Strafe (Regeln 17-19)",
+        "question": "Sie spielen Ihren Ball in einer Penalty Area. Der Ball ist unspielbar in einem Baum innerhalb der Penalty Area. Welche Erleichterungsoption steht Ihnen zur Verfügung?",
+        "image_query": "Unspielbarer Ball in Penalty Area",
+        "options": [
+            "Erleichterung für unspielbaren Ball außerhalb der PA mit 1 Strafschlag.",
+            "Erleichterung für unspielbaren Ball mit 2 Strafschlägen.",
+            "Die Optionen der Penalty Area (Regel 17), mit 1 Strafschlag.",
+            "Erleichterung am nächstgelegenen Punkt der vollständigen Erleichterung, straflos."
+        ],
+        "answer_index": 2,
+        "explanation": "Liegt der Ball eines Spielers innerhalb einer Penalty Area, gibt es keine Erleichterung für unspielbare Bälle nach Regel 19. Der Spieler darf lediglich Erleichterung mit Strafschlag nach Regel 17 in Anspruch nehmen (Regel 17.3)."
+    },
+    {
+        "id": "V.7",
+        "section": "V. Ball aufnehmen & ins Spiel zurückbringen (Regel 14)",
+        "question": "Ein Spieler markiert den Ball mit einem Ballmarker, nimmt ihn auf und reinigt ihn. Welche Strafe droht ihm, wenn er vergisst, den Ballmarker vor dem Schlag zu entfernen?",
+        "image_query": "Ballmarker vergessen",
+        "options": [
+            "Keine Strafe, wenn der Ball eingelocht wird.",
+            "Ein Strafschlag.",
+            "Grundstrafe (Zwei Strafschläge).",
+            "Disqualifikation."
+        ],
+        "answer_index": 1,
+        "explanation": "Nimmt der Spieler seinen Ball auf und vergisst, den Ballmarker vor dem Schlag zu entfernen, zieht er sich einen Strafschlag zu (Regel 14.1a)."
+    },
+    {
+        "id": "IV.15",
+        "section": "IV. Sonderregeln für Bunker & Grüns (Regeln 12-13)",
+        "question": "Was passiert, wenn der Ball in Bewegung den im Loch befindlichen Flaggenstock trifft, nachdem der Spieler ihn absichtlich in eine unzulässige Position bewegt hat?",
+        "image_query": "Flaggenstock absichtlich bewegt",
+        "options": [
+            "Der Schlag ist straflos, der Ball wird gespielt, wie er liegt.",
+            "Der Spieler zieht sich die Grundstrafe zu.",
+            "Der Schlag zählt nicht, muss aber wiederholt werden.",
+            "Der Spieler zieht einen Strafschlag zu und spielt den Ball, wie er liegt."
+        ],
+        "answer_index": 1,
+        "explanation": "Wenn der Spieler versucht, einen Vorteil durch absichtliches Bewegen des Flaggenstocks in eine unzulässige Stellung zu erreichen und der Ball den Flaggenstock trifft, zieht er sich die Grundstrafe zu (Regel 13.2a(1))."
+    },
+    {
+        "id": "III.21",
+        "section": "III. Spielen des Balls (Regeln 7-11)",
+        "question": "Ihr Ball liegt im Gelände. Sie treten aus Versehen auf einen losen Stein, der daraufhin einen anderen Gegenstand bewegt, der Ihren Ball bewegt. Was ist die Folge?",
+        "image_query": "Kette bewegt Ball",
+        "options": [
+            "Grundstrafe, da Sie die Bewegung verursacht haben.",
+            "Ein Strafschlag, da es sich um lose hinderliche Naturstoffe handelt.",
+            "Keine Strafe, da die Bewegung indirekt war.",
+            "Keine Strafe, der Ball muss zurückgelegt werden."
+        ],
+        "answer_index": 3,
+        "explanation": "Die Bewegung ist straflos, wenn sie versehentlich beim Versuch, den Ball zu finden, geschieht. Der Ball muss an die ursprüngliche Stelle zurückgelegt werden (Regel 7.4)."
     }
 ];
-// Füge hier die weiteren 25 Fragen hinzu, um auf 50 Fragen zu kommen!
-// ====================================================================================
-// ENDE FRAGENKATALOG
-// ====================================================================================
-
 
 // ====================================================================================
-// TEIL 2: LOGIK UND AUSWERTUNG
+// TEIL 2: LOGIK UND AUSWERTUNG (FEHLERBEHEBUNG FÜR MODULSTART)
 // ====================================================================================
 
+let quizData = [...quizDataOriginal]; // Aktuell verwendete Fragenliste
 let currentQuestionIndex = 0;
 let correctAnswersCount = 0;
-let incorrectAnswers = []; // Speichert Fragen, die falsch beantwortet wurden
+let incorrectAnswers = [];
 
 const quizArea = document.getElementById('quiz-area');
 const nextButton = document.getElementById('next-btn');
 
 // ZÄHLT ALLE FRAGEN PRO ABSCHNITT FÜR DIE FORTSCHRITTSANZEIGE
-function countSectionQuestions() {
-    return quizData.reduce((acc, question) => {
+function countSectionQuestions(data) {
+    return data.reduce((acc, question) => {
         const section = question.section;
         acc[section] = (acc[section] || 0) + 1;
         return acc;
     }, {});
 }
-const sectionCounts = countSectionQuestions();
+
+// Globaler Zugriff auf die Section Counts der aktuell verwendeten Fragen
+let sectionCounts = countSectionQuestions(quizData);
 
 
 function shuffleArray(array) {
@@ -618,7 +1596,7 @@ function loadQuestion(questionData) {
         <p class="question-text">${questionData.question}</p>
         
         <div class="options">
-            ${questionData.options.map((option, index) => {
+            ${quizData[currentQuestionIndex].options.map((option, index) => {
                 return `
                     <button class="option-btn" data-index="${index}">
                         ${option}
@@ -677,6 +1655,10 @@ function handleAnswer(event) {
     nextButton.innerHTML = 'Nächste Frage';
 }
 
+// ====================================================================================
+// MODUL LOGIK UND INITIALISIERUNG
+// ====================================================================================
+
 const nextQuestionHandler = () => {
     currentQuestionIndex++;
     if (currentQuestionIndex < quizData.length) {
@@ -687,11 +1669,21 @@ const nextQuestionHandler = () => {
 };
 
 const restartQuizHandler = () => {
+    // WICHTIG: Setze quizData zurück auf das Original-Array, falls ein Modul lief
+    if (quizData.length < quizDataOriginal.length) { 
+        quizData = [...quizDataOriginal]; // Alle Fragen wiederherstellen
+    }
+    
+    // Reset der Zähler
     correctAnswersCount = 0;
     incorrectAnswers = [];
     currentQuestionIndex = 0;
     
+    // Fragen neu mischen
     shuffleArray(quizData); 
+    
+    // Wichtig: sectionCounts muss für das aktuell verwendete QuizData-Array neu berechnet werden
+    sectionCounts = countSectionQuestions(quizData); 
     
     loadQuestion(quizData[currentQuestionIndex]);
     nextButton.innerHTML = 'Nächste Frage';
@@ -699,22 +1691,96 @@ const restartQuizHandler = () => {
     nextButton.addEventListener('click', nextQuestionHandler);
 };
 
-// ====================================================================================
-// INITIALISIERUNG UND START
-// ====================================================================================
+
+const MODULE_DEFINITIONS = [
+    { name: "Grundlagen & Start", keys: ["I. ", "II. "], fullRange: "Regeln 1–6" },
+    { name: "Ball in Ruhe & Platz", keys: ["III. "], fullRange: "Regeln 7–11" },
+    { name: "Sonderbereiche", keys: ["IV. "], fullRange: "Regeln 12–13" },
+    { name: "Straflose Erleichterung", keys: ["V. ", "VI. "], fullRange: "Regeln 14–16" },
+    { name: "Straf-Erleichterung & Formen", keys: ["VII. ", "VIII. ", "IX. ", "X. ", "Def."], fullRange: "Regeln 17–25" }
+];
+
+
+function displayModuleSelection() {
+    // Setze quizData nur temporär auf das Original für die Anzeige
+    const currentQuizData = [...quizDataOriginal];
+    nextButton.classList.add('hidden');
+    
+    // Die Section Counts werden für das gesamte Original-Set berechnet
+    sectionCounts = countSectionQuestions(currentQuizData); 
+
+    const modulesHtml = MODULE_DEFINITIONS.map((mod, index) => {
+        const moduleQuestions = currentQuizData.filter(q => mod.keys.some(key => q.section.startsWith(key)));
+        const count = moduleQuestions.length;
+
+        return `
+            <button class="module-btn" data-module-index="${index}">
+                <strong>Modul ${index + 1}: ${mod.name}</strong><br>
+                <span>(${mod.fullRange}) – ${count} Fragen</span>
+            </button>
+        `;
+    }).join('');
+
+    quizArea.innerHTML = `
+        <h2>Wählen Sie Ihr Trainingsmodul:</h2>
+        <div id="module-buttons-container" class="options module-selection-grid">
+            ${modulesHtml}
+        </div>
+        <button id="start-full-quiz-btn" class="module-btn full-quiz-btn" data-module-index="full">
+            Alle ${currentQuizData.length} Fragen üben (Komplett-Quiz)
+        </button>
+    `;
+
+    // NEU: Listener auf dem Container setzen, um Klicks im Modul-Grid zu behandeln
+    const container = document.getElementById('module-buttons-container');
+    if (container) {
+        container.addEventListener('click', handleModuleSelection);
+    }
+    document.getElementById('start-full-quiz-btn').addEventListener('click', handleModuleSelection);
+}
+
+
+function handleModuleSelection(event) {
+    const button = event.target.closest('.module-btn'); 
+    
+    if (!button) return; 
+
+    let selectedQuestions = [];
+    const moduleIndex = button.dataset.moduleIndex;
+
+    if (moduleIndex === 'full' || button.id === 'start-full-quiz-btn') {
+        selectedQuestions = quizDataOriginal;
+    } else {
+        const index = parseInt(moduleIndex);
+        const selectedModule = MODULE_DEFINITIONS[index]; 
+        
+        if (!selectedModule) {
+            console.error("Modul-Definition für Index", index, "nicht gefunden.");
+            return;
+        }
+
+        selectedQuestions = quizDataOriginal.filter(q => 
+            selectedModule.keys.some(key => q.section.startsWith(key))
+        );
+    }
+    
+    // 1. Die globale quizData durch die gefilterten Fragen ersetzen
+    // Wir nutzen splice, um die Referenz des ursprünglichen Arrays zu erhalten
+    quizData.splice(0, quizData.length, ...selectedQuestions); 
+    
+    // 2. Quiz starten
+    restartQuizHandler();
+}
+
 
 // Event Listener für den Reset-Button im Header
 const topResetButton = document.getElementById('reset-top-btn');
 if (topResetButton) {
-    topResetButton.addEventListener('click', restartQuizHandler);
+    // Führt bei Klick zurück zur Modulauswahl
+    topResetButton.addEventListener('click', displayModuleSelection); 
 }
 
 nextButton.addEventListener('click', nextQuestionHandler);
 
-// Initialisierung des Quiz
-shuffleArray(quizData);
-if (quizData.length > 0) {
-    loadQuestion(quizData[currentQuestionIndex]);
-} else {
-    quizArea.innerHTML = '<p>Fehler: Es wurden keine Fragen geladen.</p>';
-}
+// START: Wir starten die App immer mit der Modulauswahl
+document.addEventListener('DOMContentLoaded', displayModuleSelection);
