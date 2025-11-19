@@ -3,7 +3,7 @@ body {
     /* Tieferes, satteres Dunkelgrün als Hauptfarbe */
     font-family: 'Poppins', sans-serif;
     background-color: #004d40; /* Tiefes Waldgrün */
-    color: #f0fff0;
+    color: #f0fff0; /* Sehr helles Mint */
     margin: 0;
     padding: 20px 15px;
     display: flex;
@@ -142,6 +142,13 @@ h1 {
     transition: background-color 0.2s, border-color 0.2s, transform 0.1s;
     font-weight: 500;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sicherstellen, dass Text-Klicks den Button auslösen */
+    pointer-events: all;
+}
+
+/* Stellt sicher, dass innere Elemente Klick-Events an den Button weitergeben */
+.module-btn * {
+    pointer-events: none;
 }
 
 .option-btn:not([disabled]):hover {
@@ -241,6 +248,28 @@ h1 {
     border-color: #d50000;
     font-size: 1.2em;
     margin-top: 10px;
+}
+
+/* --- FOOTER STYLING --- */
+#main-footer {
+    width: 100%;
+    margin-top: 40px;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.8em;
+    color: #b2dfdb; /* Helles Türkis */
+    border-top: 1px solid #00332a; /* Dunkle Trennlinie */
+}
+
+#main-footer a {
+    color: #4db6ac; /* Akzentfarbe für Links */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+#main-footer a:hover {
+    color: #e0f2f1; /* Sehr heller Hover-Effekt */
+    text-decoration: underline;
 }
 
 /* --- OPTIONALE CSS KEYFRAMES (Animationen) --- */
